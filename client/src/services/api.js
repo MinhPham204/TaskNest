@@ -1,7 +1,7 @@
 ﻿import axios from "axios";
 
 // Backend origin (KHÔNG kèm /api)
-const baseURL = import.meta.env.VITE_API_URL || "https://task-nest-rho.vercel.app";
+const baseURL = import.meta.env.VITE_API_URL || "https://tasknest-ij40.onrender.com";
 
 // Dùng 1 instance duy nhất
 export const api = axios.create({

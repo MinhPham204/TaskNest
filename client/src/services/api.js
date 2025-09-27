@@ -1,6 +1,6 @@
 ﻿import axios from "axios";
 
-const API_URL = "https://tasknest-backend.vercel.app/api/tasks"; // BE endpoint
+const API_URL = "https://task-nest-rho.vercel.app/api"; // BE endpoint
 
 // Lấy danh sách task với filter & phân trang
 export const getTasks = async (params = {}) => {

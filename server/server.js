@@ -7,7 +7,7 @@ const connectDB = require("./src/config/db");
 
 const allowedOrigins = [
   "https://tasknest-app.vercel.app", // domain chính
-  "https://task-nest-inz7-p9i5vckyu-pnhatminh2004-gmailcoms-projects.vercel.app", // domain preview
+  "https://task-nest-inz7-pnhatminh2004-gmailcoms-projects.vercel.app/", // domain preview
   "http://localhost:5173" // để test local FE
 ];
 

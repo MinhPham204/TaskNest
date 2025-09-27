@@ -18,7 +18,12 @@ app.get("/", (req, res) => {
   res.send("🚀 TaskNest API is running...");
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
-});
+// chỉ chạy listen khi chạy local, không chạy khi Vercel import
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app; // export app cho Vercel

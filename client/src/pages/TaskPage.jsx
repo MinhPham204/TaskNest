@@ -58,10 +58,16 @@ export default function TaskPage() {
   };
 
   const handleDelete = async (id) => {
-    await deleteTask(id);
-    // nếu xóa có thể làm rỗng trang hiện tại, reset về trang 1 cho an toàn
-    setPage(1);
-    loadTasks(); // refresh danh sách
+    try {
+      await deleteTask(id);
+      // nếu xóa có thể làm rỗng trang hiện tại, reset về trang 1 cho an toàn
+      setPage(1);
+      loadTasks(); // refresh danh sách
+    } catch (error) {
+      console.error('Error deleting task:', error);
+      // Có thể thêm toast notification ở đây
+      alert('Có lỗi xảy ra khi xóa nhiệm vụ. Vui lòng thử lại.');
+    }
   };
 
   // Modal handlers

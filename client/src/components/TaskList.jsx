@@ -1,4 +1,4 @@
-import {LuSave, LuTrash} from "react-icons/lu";
+import { LuSave, LuTrash } from "react-icons/lu";
 
 function TaskList({ tasks, onEdit, onDelete }) {
   if (!tasks || tasks.length === 0) {
@@ -18,18 +18,10 @@ function TaskList({ tasks, onEdit, onDelete }) {
       <table className="w-full">
         <thead>
           <tr className="bg-gray-50 border-b">
-            <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Nhiệm vụ
-            </th>
-            <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Ngày hết hạn
-            </th>
-            <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Trạng thái
-            </th>
-            <th className="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-              Hành động
-            </th>
+            <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nhiệm vụ</th>
+            <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ngày hết hạn</th>
+            <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Trạng thái</th>
+            <th className="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Hành động</th>
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
@@ -43,7 +35,7 @@ function TaskList({ tasks, onEdit, onDelete }) {
                   {t.dueDate ? (
                     <div className="flex items-center gap-2">
                       <span>📅</span>
-                      <span>{new Date(t.dueDate).toLocaleDateString('vi-VN')}</span>
+                      <span>{new Date(t.dueDate).toLocaleDateString("vi-VN")}</span>
                     </div>
                   ) : (
                     <span className="text-gray-400">Không có</span>
@@ -51,11 +43,11 @@ function TaskList({ tasks, onEdit, onDelete }) {
                 </div>
               </td>
               <td className="px-6 py-4">
-                <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-                  t.status === "done" 
-                    ? "bg-green-100 text-green-800" 
-                    : "bg-red-100 text-red-800"
-                }`}>
+                <span
+                  className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
+                    t.status === "done" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+                  }`}
+                >
                   <span className="w-2 h-2 rounded-full mr-2 bg-current"></span>
                   {t.status === "done" ? "Hoàn thành" : "Chưa hoàn thành"}
                 </span>
@@ -64,15 +56,15 @@ function TaskList({ tasks, onEdit, onDelete }) {
                 <div className="flex items-center justify-end gap-2">
                   <button
                     onClick={() => onEdit(t)}
-                    className="gap-2 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-yellow-700 bg-yellow-100 hover:bg-yellow-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition-colors"
+                    className="gap-2 inline-flex items-center px-3 py-2 text-sm rounded-md text-yellow-700 bg-yellow-100 hover:bg-yellow-200 transition-colors"
                   >
-                    <LuSave/> Sửa
+                    <LuSave /> Sửa
                   </button>
                   <button
-                    onClick={() => onDelete(t._id)}
-                    className="gap-2 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
+                    onClick={() => onDelete(t)}  
+                    className="gap-2 inline-flex items-center px-3 py-2 text-sm rounded-md text-red-700 bg-red-100 hover:bg-red-200 transition-colors"
                   >
-                    <LuTrash/> Xóa
+                    <LuTrash /> Xóa
                   </button>
                 </div>
               </td>

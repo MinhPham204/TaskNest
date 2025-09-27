@@ -1,7 +1,7 @@
 ﻿import axios from "axios";
 
 // Backend origin (KHÔNG kèm /api)
-const baseURL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const baseURL = import.meta.env.VITE_API_URL || "https://task-nest-rho.vercel.app";
 
 // Dùng 1 instance duy nhất
 export const api = axios.create({
@@ -36,5 +36,6 @@ export const updateTask = async (id, task) => {
 
 // DELETE /api/tasks/:id
 export const deleteTask = async (id) => {
-  await api.delete(`/api/tasks/${id}`);
+  const res = await api.delete(`/api/tasks/${id}`);
+  return res.data;
 };

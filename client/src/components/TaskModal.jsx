@@ -106,3 +106,4 @@ export default function TaskModal({ isOpen, onClose, onSubmit, initialData }) {
     </Modal>
   );
 }
+

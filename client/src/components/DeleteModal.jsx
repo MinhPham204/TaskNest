@@ -50,3 +50,4 @@ export default function DeleteModal({ isOpen, onClose, onConfirm, taskTitle }) {
     </Modal>
   );
 }
+
